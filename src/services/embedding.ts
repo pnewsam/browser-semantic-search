@@ -18,7 +18,6 @@ function EmbeddingService() {
     items.forEach((item) => {
       const text = `${item.title} ${item.content}`;
       const embedding = createEmbedding(text);
-      console.log({ embedding });
       embeddings.set(item.id, embedding);
     });
 
@@ -62,12 +61,9 @@ function EmbeddingService() {
   }
 
   function search(query: string, items: any[]) {
-    console.log({ embeddings });
-
     const queryEmbedding = createEmbedding(query);
     const results = items.map((item) => {
       const embedding = embeddings.get(item.id);
-      console.log({ embedding });
       const similarity = cosineSimilarity(queryEmbedding, embedding || []);
       return { ...item, similarity };
     });
