@@ -1,11 +1,28 @@
 function EmbeddingService() {
-  let embeddings: any[] = [];
+  let embeddings: Map<string, number[]> = new Map();
+  let vocabulary: string[] = [];
+
+  function initialize(items: any[]) {
+    vocabulary = createVocabulary(items);
+    embeddings = generateEmbeddings(items);
+  }
 
   function tokenize(text: string) {
     return text
       .toLowerCase()
       .split(/\W+/)
       .filter((token) => token.length > 0);
+  }
+
+  function generateEmbeddings(items: any[]) {
+    items.forEach((item) => {
+      const text = `${item.title} ${item.content}`;
+      const embedding = createEmbedding(text);
+      console.log({ embedding });
+      embeddings.set(item.id, embedding);
+    });
+
+    return embeddings;
   }
 
   function createVocabulary(items: any[]) {
@@ -18,7 +35,7 @@ function EmbeddingService() {
     return Array.from(tokens) as string[];
   }
 
-  function createEmbedding(text: string, vocabulary: string[]) {
+  function createEmbedding(text: string) {
     const tokens = tokenize(text);
     const vector = new Array(vocabulary.length).fill(0);
 
@@ -33,12 +50,40 @@ function EmbeddingService() {
       vector.reduce((sum, val) => sum + val * val, 0)
     );
 
-    console.log({ magnitude });
     return magnitude === 0 ? vector : vector.map((val) => val / magnitude);
   }
 
-  return { tokenize, createVocabulary, createEmbedding, embeddings };
+  function cosineSimilarity(vector1: number[], vector2: number[]) {
+    let dotProduct = 0;
+    for (let i = 0; i < vector1.length; i++) {
+      dotProduct += vector1[i] * vector2[i];
+    }
+    return dotProduct;
+  }
+
+  function search(query: string, items: any[]) {
+    console.log({ embeddings });
+
+    const queryEmbedding = createEmbedding(query);
+    const results = items.map((item) => {
+      const embedding = embeddings.get(item.id);
+      console.log({ embedding });
+      const similarity = cosineSimilarity(queryEmbedding, embedding || []);
+      return { ...item, similarity };
+    });
+
+    return results
+      .filter((item) => item.similarity > 0.1)
+      .sort((a, b) => b.similarity - a.similarity);
+  }
+
+  return {
+    embeddings,
+    initialize,
+    similarity: cosineSimilarity,
+    search,
+  };
 }
 
 const embeddingService = EmbeddingService();
-export default embeddingService;
+export { embeddingService };
