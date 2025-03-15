@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "JavaScript Basics",
+    "content": "Learn the fundamentals of JavaScript programming language including variables, functions, and control flow."
+  },
+  {
+    "id": 2,
+    "title": "Introduction to React",
+    "content": "Discover React, a popular JavaScript library for building user interfaces with components."
+  },
+  {
+    "id": 3,
+    "title": "CSS Grid Layout",
+    "content": "Master CSS Grid Layout to create two-dimensional grid-based layouts in your web designs."
+  },
+  {
+    "id": 4,
+    "title": "Node.js Server Setup",
+    "content": "Learn how to set up a basic Node.js server with Express to handle HTTP requests."
+  },
+  {
+    "id": 5,
+    "title": "MongoDB Database",
+    "content": "Understand how to work with MongoDB, a NoSQL database for modern applications."
+  },
+  {
+    "id": 6,
+    "title": "TypeScript Tutorial",
+    "content": "Get started with TypeScript, a typed superset of JavaScript that compiles to plain JavaScript."
+  },
+  {
+    "id": 7,
+    "title": "Web Accessibility",
+    "content": "Learn best practices for creating accessible websites for people with disabilities."
+  },
+  {
+    "id": 8,
+    "title": "HTTP Protocol",
+    "content": "Understanding how the HTTP protocol works with requests and responses between clients and servers."
+  },
+  {
+    "id": 9,
+    "title": "JavaScript Async Programming",
+    "content": "Master asynchronous programming in JavaScript with Promises and async/await syntax."
+  },
+  {
+    "id": 10,
+    "title": "CSS Animations",
+    "content": "Learn how to create engaging animations using CSS transitions and keyframes."
+  }
+]
