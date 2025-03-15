@@ -1,5 +1,5 @@
 name = "browser-semantic-search"
-compatibility_date = "2024-03-01"
+main = "src/index.tsx"
+compatibility_date = "2022-07-12"
 
-[site]
-bucket = "./dist"
+workers_dev = false
