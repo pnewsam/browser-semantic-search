@@ -1,0 +1,5 @@
+name = "browser-semantic-search"
+compatibility_date = "2024-03-01"
+
+[site]
+bucket = "./dist"
