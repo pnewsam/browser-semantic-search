@@ -17,8 +17,8 @@ export default function Embeddings() {
       <Table className="border border-stone-300 rounded-md bg-white overflow-hidden">
         <TableHeader>
           <TableRow>
-            <TableHead className="text-stone-800">ID</TableHead>
-            <TableHead className="text-stone-800">Value</TableHead>
+            <TableHead className="bg-stone-100 text-stone-800">ID</TableHead>
+            <TableHead className="bg-stone-100 text-stone-800">Value</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

@@ -26,6 +26,7 @@ export default function ListViewActions() {
     <div className="flex gap-2 mb-4">
       <Input
         className="w-full bg-white h-10 border-stone-300"
+        placeholder="Enter a query such as 'javascript', or 'and'"
         type="text"
         value={query}
         onChange={(e) => {

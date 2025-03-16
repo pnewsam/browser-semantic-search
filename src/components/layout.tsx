@@ -5,14 +5,17 @@ import BagOfWordsEmbedder from "../services/bag-of-words-embedder";
 import entities from "../data.json";
 import ListView from "./list-view";
 import EmbeddingsView from "./embeddings-view";
+import items from "../data.json";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
-import { embedderAtom, embeddingsAtom } from "../state";
+import { embedderAtom, embeddingsAtom, resultsAtom } from "../state";
 
 export default function Layout() {
   const [, setEmbeddings] = useAtom(embeddingsAtom);
   const [, setEmbedder] = useAtom(embedderAtom);
+  const [, setResults] = useAtom(resultsAtom);
 
   useEffect(() => {
+    setResults(items);
     const embedder = BagOfWordsEmbedder({
       stringify: (entity: any) => `${entity.title} ${entity.content}`,
       entities,
