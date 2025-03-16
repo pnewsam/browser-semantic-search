@@ -6,11 +6,12 @@ import {
   TableHeader,
   TableRow,
 } from "./ui/table";
-export default function Embeddings({
-  embeddings,
-}: {
-  embeddings: Map<string, number[]>;
-}) {
+import { useAtom } from "jotai";
+import { embeddingsAtom } from "../state";
+
+export default function Embeddings() {
+  const [embeddings] = useAtom(embeddingsAtom);
+
   return (
     <div className="border border-stone-300 rounded-md bg-white overflow-hidden">
       <Table className="border border-stone-300 rounded-md bg-white overflow-hidden">

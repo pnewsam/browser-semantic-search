@@ -1,5 +1,0 @@
-name = "browser-semantic-search"
-main = "src/index.tsx"
-compatibility_date = "2022-07-12"
-
-workers_dev = false
