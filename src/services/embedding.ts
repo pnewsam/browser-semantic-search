@@ -34,6 +34,9 @@ function EmbeddingService() {
     return Array.from(tokens) as string[];
   }
 
+  const magnitude = (vector: number[]) =>
+    Math.sqrt(vector.reduce((sum, val) => sum + val * val, 0));
+
   function createEmbedding(text: string) {
     const tokens = tokenize(text);
     const vector = new Array(vocabulary.length).fill(0);
@@ -45,11 +48,9 @@ function EmbeddingService() {
       }
     });
 
-    const magnitude = Math.sqrt(
-      vector.reduce((sum, val) => sum + val * val, 0)
-    );
+    const mag = magnitude(vector);
 
-    return magnitude === 0 ? vector : vector.map((val) => val / magnitude);
+    return mag === 0 ? vector : vector.map((val) => val / mag);
   }
 
   function cosineSimilarity(vector1: number[], vector2: number[]) {

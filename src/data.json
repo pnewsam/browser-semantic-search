@@ -2,51 +2,51 @@
   {
     "id": 1,
     "title": "JavaScript Basics",
-    "content": "Learn the fundamentals of JavaScript programming language including variables, functions, and control flow."
+    "content": "Learn the fundamentals of JavaScript programming language including variables, functions, and control flow. Explore core concepts like data types, operators, and scope that form the building blocks of JavaScript programming. Practice with hands-on examples and exercises to reinforce your understanding of these essential concepts."
   },
   {
     "id": 2,
     "title": "Introduction to React",
-    "content": "Discover React, a popular JavaScript library for building user interfaces with components."
+    "content": "Discover React, a popular JavaScript library for building user interfaces with components. Learn about the virtual DOM and how React efficiently updates the UI through its reconciliation process. Explore React hooks and state management to create dynamic and interactive web applications."
   },
   {
     "id": 3,
     "title": "CSS Grid Layout",
-    "content": "Master CSS Grid Layout to create two-dimensional grid-based layouts in your web designs."
+    "content": "Master CSS Grid Layout to create two-dimensional grid-based layouts in your web designs. Learn advanced grid techniques like template areas, auto-fit/auto-fill, and responsive grid layouts. Understand how to combine CSS Grid with Flexbox to create complex and flexible layouts."
   },
   {
     "id": 4,
     "title": "Node.js Server Setup",
-    "content": "Learn how to set up a basic Node.js server with Express to handle HTTP requests."
+    "content": "Learn how to set up a basic Node.js server with Express to handle HTTP requests. Explore middleware configuration and routing to create a robust API structure. Implement error handling and learn best practices for organizing your server-side code."
   },
   {
     "id": 5,
     "title": "MongoDB Database",
-    "content": "Understand how to work with MongoDB, a NoSQL database for modern applications."
+    "content": "Understand how to work with MongoDB, a NoSQL database for modern applications. Learn about CRUD operations and how to design efficient document schemas for your data. Explore MongoDB aggregation pipeline and indexing strategies to optimize database performance."
   },
   {
     "id": 6,
     "title": "TypeScript Tutorial",
-    "content": "Get started with TypeScript, a typed superset of JavaScript that compiles to plain JavaScript."
+    "content": "Get started with TypeScript, a typed superset of JavaScript that compiles to plain JavaScript. Master interfaces, generics, and advanced type systems to write more maintainable code. Learn how to gradually migrate JavaScript projects to TypeScript and leverage its powerful tooling support."
   },
   {
     "id": 7,
     "title": "Web Accessibility",
-    "content": "Learn best practices for creating accessible websites for people with disabilities."
+    "content": "Learn best practices for creating accessible websites for people with disabilities. Understand WCAG guidelines and how to implement ARIA attributes for better screen reader support. Master keyboard navigation and focus management to ensure your web applications are usable by everyone."
   },
   {
     "id": 8,
     "title": "HTTP Protocol",
-    "content": "Understanding how the HTTP protocol works with requests and responses between clients and servers."
+    "content": "Understanding how the HTTP protocol works with requests and responses between clients and servers. Learn about different HTTP methods, status codes, and headers that enable web communication. Explore caching strategies and security considerations in HTTP implementations."
   },
   {
     "id": 9,
     "title": "JavaScript Async Programming",
-    "content": "Master asynchronous programming in JavaScript with Promises and async/await syntax."
+    "content": "Master asynchronous programming in JavaScript with Promises and async/await syntax. Learn how to handle multiple async operations using Promise combinators like all() and race(). Understand error handling patterns and best practices for writing clean asynchronous code."
   },
   {
     "id": 10,
     "title": "CSS Animations",
-    "content": "Learn how to create engaging animations using CSS transitions and keyframes."
+    "content": "Learn how to create engaging animations using CSS transitions and keyframes. Master timing functions and transform properties to create smooth and performant animations. Explore advanced animation techniques like 3D transforms and animation events to create interactive experiences."
   }
 ]

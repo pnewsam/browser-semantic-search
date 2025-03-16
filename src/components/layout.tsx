@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useAtom } from "jotai";
+
 import { embeddingService } from "../services/embedding";
 import items from "../data.json";
 import ListView from "./list-view";
 import EmbeddingsView from "./embeddings-view";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
-import { useAtom } from "jotai";
 import { embeddingsAtom } from "../state";
 
 export default function Layout() {
@@ -18,9 +19,13 @@ export default function Layout() {
   return (
     <div className="">
       <Tabs defaultValue="search">
-        <TabsList>
-          <TabsTrigger value="search">Search</TabsTrigger>
-          <TabsTrigger value="embeddings">Embeddings</TabsTrigger>
+        <TabsList className="bg-zinc-200/50 space-x-2 h-12">
+          <TabsTrigger className="h-10" value="search">
+            Search
+          </TabsTrigger>
+          <TabsTrigger className="h-10" value="embeddings">
+            Embeddings
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="search">
           <ListView />
