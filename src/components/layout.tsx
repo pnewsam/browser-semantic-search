@@ -1,19 +1,24 @@
 import { useEffect } from "react";
 import { useAtom } from "jotai";
 
-import { embeddingService } from "../services/embedding";
-import items from "../data.json";
+import BagOfWordsEmbedder from "../services/bag-of-words-embedder";
+import entities from "../data.json";
 import ListView from "./list-view";
 import EmbeddingsView from "./embeddings-view";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
-import { embeddingsAtom } from "../state";
+import { embedderAtom, embeddingsAtom } from "../state";
 
 export default function Layout() {
   const [, setEmbeddings] = useAtom(embeddingsAtom);
+  const [, setEmbedder] = useAtom(embedderAtom);
 
   useEffect(() => {
-    embeddingService.initialize(items);
-    setEmbeddings(embeddingService.embeddings);
+    const embedder = BagOfWordsEmbedder({
+      stringify: (entity: any) => `${entity.title} ${entity.content}`,
+      entities,
+    });
+    setEmbedder(embedder);
+    setEmbeddings(embedder.embeddings);
   }, []);
 
   return (

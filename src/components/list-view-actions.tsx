@@ -2,16 +2,17 @@ import { SearchIcon, XIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { useAtom } from "jotai";
-import { queryAtom, resultsAtom } from "../state";
+import { embedderAtom, queryAtom, resultsAtom } from "../state";
 import items from "../data.json";
-import { embeddingService } from "../services/embedding";
 
 export default function ListViewActions() {
   const [query, setQuery] = useAtom(queryAtom);
   const [results, setResults] = useAtom(resultsAtom);
+  const [embedder] = useAtom(embedderAtom);
 
   const onSearch = () => {
-    setResults(query?.trim() ? embeddingService.search(query, items) : items);
+    if (!embedder) return;
+    setResults(query?.trim() ? embedder.search(query, items) : items);
   };
 
   const isFiltered = Boolean(results.length < items.length);
